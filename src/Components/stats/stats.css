@@ -1,0 +1,190 @@
+/* Container and Layout */
+.statistics-container {
+  padding: 30px 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.statistics-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5)
+}
+
+/* Cards */
+.statistics-card {
+  width: auto; /* Dynamic width based on content */
+  max-width: 300px; /* Optional: Set a maximum width to prevent too large cards */
+  margin: 0 auto; /* Center the card horizontally */
+  padding: 20px; /* Add some padding for spacing */
+  border-radius: 12px; /* Smooth, rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Gradient background */
+  border: 2px solid #e1e4e8; /* Light border for contrast */
+  margin-bottom: 20px; /* Spacing between cards */
+}
+
+.statistics-card:hover {
+  transform: translateY(-5px); /* Slightly lifts the card on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.statistics-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4b6584; /* Darker color for contrast */
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.statistics-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem; /* Large value size */
+  font-weight: bold;
+  color: #2c3e50; /* Dark but visually appealing color */
+  text-align: center;
+}
+
+.statistics-suffix {
+  color: #f39c12; /* Distinct color for the plus sign */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.statistics-card:hover .statistics-value {
+  color: #34495e; /* Slightly changes value color on hover */
+}
+
+.statistics-card:hover .statistics-title {
+  color: #2c3e50; /* Changes title color on hover */
+}
+
+/* Line Chart */
+.chart-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* For the background logo */
+  height: 350px;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/* Background Logo for Line Chart */
+.chart-container::before {
+  content: '';
+  position: absolute;
+  background-image: url('../../images/logo2.png'); /* Replace with your logo path */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%; /* Adjust the size as needed */
+  opacity: 0.15; /* Faint, subtle logo */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Logo behind chart */
+}
+
+/* Ensure chart content is on top of background */
+.chart-container .ant-statistic-content, .chart-container .chart {
+  position: relative;
+  z-index: 1;
+}
+
+/* Legend Styling */
+.legend-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.month-legend {
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+}
+
+.month-legend li {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.legend-square {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+  .statistics-container {
+      padding: 10px 10px;
+  }
+
+  .statistics-card {
+      padding: 10px;
+      height: auto;
+      margin-bottom: 20px;
+  }
+
+  .chart-container {
+      margin-top: 20px;
+      height: 350px;
+      padding: 0px;
+  }
+
+  .statistics-heading {
+      font-size: 35px;
+      font-weight: 400px;
+      text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5)
+  }
+
+  .statistics-title {
+      font-size: 1.2rem;
+  }
+
+  .statistics-value {
+      font-size: 2rem;
+  }
+
+  .statistics-suffix {
+      font-size: 1.3rem;
+  }
+
+  /* Handle month labels in the chart for better mobile display */
+  .ant-chart-axis-label {
+      font-size: 10px !important;
+      transform: rotate(-45deg); /* Rotate labels for readability on small screens */
+  }
+}
+
+/* Tablet Screen Adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .statistics-card {
+    padding: 15px;
+  }
+
+  .statistics-value {
+    font-size: 2.2rem;
+  }
+
+  .statistics-title {
+    font-size: 1.1rem;
+  }
+
+  .chart-container {
+    height: 350px;
+  }
+}

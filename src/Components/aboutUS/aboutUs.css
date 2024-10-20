@@ -1,0 +1,124 @@
+.about-us {
+    background-color: #f4f4f4;
+  }
+  
+  /* Introduction Section */
+  .intro-section-with-background {
+    background: url('../../images/about1.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center; /* Center the text card */
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+    width: 100vw; /* Use full viewport width */
+  }
+  
+  /* Adjusting text card for better mobile UX */
+  .text-card {
+    background-color: rgba(0, 0, 0, 0.7); /* Light background for readability */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Elevation effect */
+    max-width: 90%; /* Use most of the available width */
+    margin: 0 auto; /* Center the card */
+    text-align: justify;
+    margin-top: 40px;
+  }
+  
+  .text-card h1 {
+    font-size: 4.5rem;
+    color: #f3c647;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(231, 201, 28, 0.5)
+  }
+  
+  .text-card p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #FFFFFF;
+  }
+  
+  .text-card p strong {
+    color: #f3c647;
+  }
+  
+  /* Hover effect for card */
+  .text-card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .domains-section {
+    margin-top: 50px;
+  }
+  
+  .domains-section h2 {
+    text-align: center;
+    font-size: 5rem;
+    color: #f3c647;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .custom-card {
+    text-align: center;
+    border-left: 5px solid #f3c647;
+    border-bottom: 5px solid #f3c647;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    padding: 20px;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+  }
+
+  .custom-card strong {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+  }
+  
+  .custom-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Media Queries for Mobile */
+  @media (max-width: 768px) {
+    .intro-section-with-background {
+      padding: 50px 0;
+      background-position: top center;
+      min-height: 300px;
+      width: 100vw; /* Ensure full width for mobile */
+    }
+  
+    .text-card {
+      max-width: 100%; /* Take up more width on smaller screens */
+      padding: 20px;
+      margin-top: 50px;
+    }
+  
+    .text-card h1 {
+      font-size: 2.5rem;
+    }
+  
+    .text-card p {
+      font-size: 1rem;
+    }
+  
+    .domains-section h2 {
+      font-size: 2.5rem;
+    }
+  
+    .custom-card {
+      margin-bottom: 20px;
+    }
+  }
+  

@@ -1,0 +1,105 @@
+.header {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-around; /* Space between logo and menu */
+    background-color: #000; /* Black background */
+    padding: 0 16px; /* Add padding */
+    position: fixed; /* Fix the position */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000;
+  }
+  
+  .logo {
+    width: 65px;
+    height: auto; /* Adjust height for the logo */
+    max-height: 64px; /* Prevent exceeding header height */
+    object-fit: contain; /* Ensure logo fits well */
+    
+  }
+  
+  /* Menu styles */
+  .header .ant-menu {
+    background-color: #000000; /* Set menu background to black */
+ /* Remove any potential borders */
+  }
+
+  /* Individual menu items */
+  .header .ant-menu-item {
+    color: #ffffff !important; /* Default color for menu items */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    padding: 0 16px; /* Adjust padding for menu items */
+    border-bottom: none !important; /* Remove any existing bottom border */
+    position: relative; /* Required for pseudo-element positioning */
+    margin: 0 5px; /* Add horizontal margin for spacing */
+    
+    /* No focus outline or box-shadow */
+    &:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+  /* Hover style for menu items */
+  .header .ant-menu-item:hover {
+    color: #f3c647 !important; /* Change color on hover */
+  }
+  
+  /* Underline effect on hover */
+  .header .ant-menu-item:hover::after {
+    content: ''; /* Create the underline */
+    display: block; /* Ensure it's a block element */
+    width: 100%; /* Full width */
+    height: 2px; /* Thickness of the line */
+    background-color: #f3c647; /* Golden color for underline */
+    position: absolute; /* Position it absolutely */
+    bottom: -2px; /* Align it just below the item */
+    left: 0; /* Start from the left */
+  }
+  
+  /* Selected item style */
+  .header .ant-menu-item-selected {
+    color: #f3c647 !important; /* Selected item color */
+  }
+  
+  /* Underline for active item */
+  .header .ant-menu-item-selected::after {
+    content: ''; /* Create the underline */
+    display: block; /* Ensure it's a block element */
+    width: calc(100% - 32px); /* Full width minus padding (16px left + 16px right) */
+    height: 5px; /* Thickness of the line */
+    background-color: #f3c647; /* Golden color for the underline */
+    position: absolute; /* Position it absolutely */
+    bottom: -2px; /* Align it just below the item */
+    left: 16px; /* Align to the left, accounting for padding */
+  }
+  
+  
+  /* Remove default blue underline for horizontal menus */
+  .ant-menu-horizontal .ant-menu-item::after {
+    border-bottom: none !important; /* Remove default underline */
+    box-shadow: none !important; /* Remove any box-shadow */
+  }
+  
+  /* Override the color for the submenu title */
+  .header .ant-menu-submenu-title {
+    color: #f3c647 !important; /* Change to your desired color */
+  }
+
+
+
+
+  /* Media queries for mobile view */
+  @media (max-width: 768px) {
+    /* Adjustments for mobile view */
+    .header {
+      justify-content: space-between; /* Space items */
+    }
+    /* Show the menu items in the mobile view */
+    .header .ant-menu {
+      display: flex !important; /* Show menu items */
+    }
+    
+  }
+
+  

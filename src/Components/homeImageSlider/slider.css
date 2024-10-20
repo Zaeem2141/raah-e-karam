@@ -1,0 +1,167 @@
+/* Full width and responsive height */
+.slider-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures it covers the entire width */
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background-image 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Slider Container */
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Responsive height */
+    max-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Content styling */
+  .content {
+    position: absolute;
+    left: 50px;
+    z-index: 2;
+    color: white;
+    max-width: 500px;
+  }
+  
+  h1 {
+    font-size: 3.5vw; /* Responsive font size */
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  .highlight {
+    color: #f3c647; /* Highlight color */
+  }
+  
+  p {
+    font-size: 1.2vw; /* Responsive text */
+    margin: 20px 0;
+  }
+  
+  .donate-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #f3c647, #ff8c00); /* Gradient for a dashing look */
+    border: none;
+    color: white;
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-radius: 30px; /* Rounded corners for a modern look */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transitions */
+    display: inline-block;
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 1px; /* Add letter spacing */
+  }
+  
+  .donate-btn:hover {
+    background: linear-gradient(135deg, #ffb347, #ff5733); /* Brighter gradient on hover */
+    transform: translateY(-5px); /* Move the button slightly up */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Increase shadow intensity on hover */
+  }
+  
+  .donate-btn:active {
+    transform: translateY(-2px); /* Slightly move down when clicked */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Reduce shadow on active */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    filter: blur(2px); /* Subtle blur */
+    z-index: 1;
+  }
+  
+  /* Dots Pagination */
+  .dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dot.active {
+    background-color: #f3c647; /* Highlight active dot */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 5vw;
+    }
+  
+    p {
+      font-size: 2vw;
+    }
+  
+    .donate-btn {
+      font-size: 2vw;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      left: 30px;
+    }
+  
+    h1 {
+      font-size: 5vw;
+    }
+  
+    p {
+      font-size: 1.8vw;
+    }
+  
+    .donate-btn {
+      font-size: 2vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      left: 20px;
+    }
+  
+    h1 {
+      font-size: 8vw;
+    }
+  
+    p {
+      font-size: 3.5vw;
+    }
+  
+    .donate-btn {
+      font-size: 3.5vw;
+    }
+    
+    .slider-container {
+      width: 100%;
+      height: 70vh; /* Responsive height */
+    
+    }
+  }
+  
+  
