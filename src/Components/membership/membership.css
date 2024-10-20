@@ -1,0 +1,127 @@
+.join-us-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3c647; /* Light background for the whole container */
+  min-height: 100vh;
+  padding-top: 80px; /* Space from the navbar */
+}
+
+/* Change the color of all labels in the form */
+.ant-form-item-label > label {
+  color: rgba(255, 255, 255, 1) !important; /* Force white color */
+  font-weight: bold;
+}
+
+.image-section {
+  flex: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-us-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.form-section {
+  flex: 0.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble-form {
+  background: rgba(0, 0, 0, 0.5); /* Light black transparent bubble form */
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.styled-input {
+  border-radius: 12px;
+  padding: 14px 18px;
+  border: 1px solid #ddd; /* A lighter border color */
+  background-color: #f9f9f9; /* Light background */
+  font-size: 16px; /* Improve readability */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none; /* Remove default outline */
+}
+
+/* On focus */
+.styled-input:focus {
+  border-color: #ffd700; /* Golden border on focus */
+  box-shadow: 0px 4px 16px rgba(255, 215, 0, 0.2); /* Golden glow */
+  background-color: #fff; /* Slightly brighter on focus */
+}
+
+/* On hover */
+.styled-input:hover {
+  border-color: #aaa; /* Slightly darker border on hover */
+}
+
+/* Placeholder styling */
+.styled-input::placeholder {
+  color: #bbb; /* Lighter text for placeholders */
+  font-style: italic; /* Italicized placeholder for differentiation */
+}
+
+.next-btn,
+.back-btn,
+.submit-btn {
+  background: linear-gradient(
+    135deg,
+    #f3c647,
+    #ff8c00
+  ); /* Golden gradient button */
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.next-btn:hover,
+.back-btn:hover,
+.submit-btn:hover {
+  background: #ffcc33 !important;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-btn,
+.submit-btn {
+  width: 48%;
+}
+
+@media (max-width: 768px) {
+  .join-us-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form-section,
+  .image-section {
+    flex: 1;
+  }
+
+  .back-btn,
+  .submit-btn,
+  .next-btn {
+    width: 100%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

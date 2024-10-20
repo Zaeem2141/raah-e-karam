@@ -17,6 +17,11 @@ const menuItems = [
     path: "/about"
   },
   {
+    label: "Join Us",
+    key: "join",
+    path: "/joinUs"
+  },
+  {
     label: "Contact Me",
     key: "contact",
     path: "/contact"

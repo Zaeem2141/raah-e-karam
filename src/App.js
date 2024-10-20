@@ -4,6 +4,7 @@ import { AppLAyout } from './Components/Layout/layout';
 import { RouterProvider , createBrowserRouter } from 'react-router-dom';
 import { AboutUs } from './Components/aboutUS/aboutUs';
 import { Home } from './Components/home/home';
+import { JoinUsForm } from './Components/membership/membership';
 
 const App = () => {
 
@@ -19,6 +20,10 @@ const App = () => {
         {
           path: "/about",
           element : <AboutUs/>
+        },
+        {
+          path: "/joinUs",
+          element : <JoinUsForm/>
         }
       ]
     },
