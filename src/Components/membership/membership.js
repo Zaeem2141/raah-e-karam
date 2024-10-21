@@ -1,65 +1,57 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Checkbox, DatePicker, message } from 'antd';
+import { Form, Input, Button, Checkbox, DatePicker, message, notification } from 'antd';
 import { UserOutlined, IdcardOutlined, MailOutlined, PhoneOutlined } from '@ant-design/icons';
 import './membership.css';
-import join from "../../images/j.png"
+import join from "../../images/j.png";
+import { db } from "../firebase/firebase";
+import { addDoc, collection } from 'firebase/firestore';
 
 export const JoinUsForm = () => {
   const [form] = Form.useForm();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state for disabling the form
 
-  const onFinish = (values) => {
-    // Check which step is currently active and combine values accordingly
-    const data = {
-        name: values.name || form.getFieldValue('name'), // For step 1
-        fathersName: values.fathersName || form.getFieldValue('fathersName'), // For step 1
-        phoneNumber: values.phoneNumber || form.getFieldValue('phoneNumber'), // For step 1
-        bloodGroup: values.bloodGroup || form.getFieldValue('bloodGroup'), // For step 1
-        address: values.address || form.getFieldValue('address'), // For step 1
-        currentInstitute: values.currentInstitute, // For step 2
-        dateOfJoining: values.dateOfJoining, // For step 2
-        cnic: values.cnic, // For step 2
-        email: values.email, // For step 2
-        referralName: values.referralName, // For step 2
-        skills: values.skills // For step 2
-    };
+  const onFinish = async (values) => {
+    try {
+      setIsSubmitting(true); // Disable the form on submission
+      console.log("Final Submitted Values:", values);
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzPx4-6i9SC9UJh1Kje0-vNtx4deS_O3hiPXKiSH46gR_NqBFIGJFE5-pgGLf_srfrr/exec'; // Your Google Apps Script URL
+      // Convert the date to a string if it's present
+      const dateOfJoining = values.dateOfJoining ? values.dateOfJoining.format('YYYY-MM-DD') : null;
 
-    fetch(scriptUrl, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok: ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then((result) => {
-        if (result.status === 'success') {
-            message.success('Form Submitted Successfully!');
-        } else {
-            message.error('Failed to submit the form.');
-        }
-    })
-    .catch((error) => {
-        console.error('Error submitting form:', error);
-        message.error('An error occurred while submitting the form: ' + error.message);
-    });
-};
+      // Add data to Firestore
+      const docRef = await addDoc(collection(db, "submissions"), {
+        name: form.getFieldValue("name") || '',
+        fatherName: form.getFieldValue("fatherName") || '',
+        phoneNumber: form.getFieldValue("phoneNumber") || '',
+        bloodGroup: form.getFieldValue("bloodGroup") || '',
+        address: form.getFieldValue("address") || '',
+        currentInstitute: values.currentInstitute || '',
+        dateOfJoining: dateOfJoining,
+        cnic: values.cnic || '',
+        email: values.email || '',
+        referralName: values.referralName || '',
+        skills: values.skills || [],
+      });
 
+      notification.success({ message: "Form submitted successfully!" });
 
+      // Reset form and steps if needed
+      form.resetFields();
+      setCurrentStep(1);
+    } catch (error) {
+      notification.error({ message: "Form not submitted" });
+    } finally {
+      setIsSubmitting(false); // Re-enable the form after submission
+    }
+  };
 
   const nextStep = () => {
-    setCurrentStep(2);
+    setCurrentStep(2); // Move to the next step
   };
 
   const previousStep = () => {
-    setCurrentStep(1);
+    setCurrentStep(1); // Go back to the previous step
   };
 
   const cnicRegex = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
@@ -74,7 +66,7 @@ export const JoinUsForm = () => {
           <Form
             form={form}
             layout="vertical"
-            onFinish={onFinish}
+            onFinish={currentStep === 2 ? onFinish : null} // Only call onFinish on the last step
             autoComplete="off"
             className="join-us-form"
           >
@@ -85,7 +77,7 @@ export const JoinUsForm = () => {
                   label="Name"
                   rules={[{ required: true, message: 'Please input your name!' }]}
                 >
-                  <Input prefix={<UserOutlined />} placeholder="Enter your name" className="styled-input" />
+                  <Input prefix={<UserOutlined />} placeholder="Enter your name" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -93,7 +85,7 @@ export const JoinUsForm = () => {
                   label="Father's Name"
                   rules={[{ required: true, message: "Please input your father's name!" }]}
                 >
-                  <Input placeholder="Enter father's name" className="styled-input" />
+                  <Input placeholder="Enter father's name" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -104,7 +96,7 @@ export const JoinUsForm = () => {
                     { pattern: /^\d{11}$/, message: 'Phone number must be 11 digits.' },
                   ]}
                 >
-                  <Input prefix={<PhoneOutlined />} placeholder="Enter phone number" className="styled-input" />
+                  <Input prefix={<PhoneOutlined />} placeholder="Enter phone number" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -112,7 +104,7 @@ export const JoinUsForm = () => {
                   label="Blood Group"
                   rules={[{ required: true, message: 'Please input your blood group!' }]}
                 >
-                  <Input placeholder="Enter blood group" className="styled-input" />
+                  <Input placeholder="Enter blood group" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -120,10 +112,10 @@ export const JoinUsForm = () => {
                   label="Address"
                   rules={[{ required: true, message: 'Please input your address!' }]}
                 >
-                  <Input placeholder="Enter your address" className="styled-input" />
+                  <Input placeholder="Enter your address" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
-                <Button type="primary" onClick={nextStep} className="next-btn">
+                <Button type="primary" onClick={nextStep} className="next-btn" disabled={isSubmitting}>
                   Next
                 </Button>
               </>
@@ -136,7 +128,7 @@ export const JoinUsForm = () => {
                   label="Current Institute"
                   rules={[{ required: true, message: 'Please input your current institute!' }]}
                 >
-                  <Input placeholder="Enter your current institute" className="styled-input" />
+                  <Input placeholder="Enter your current institute" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -144,7 +136,7 @@ export const JoinUsForm = () => {
                   label="Date of Joining"
                   rules={[{ required: true, message: 'Please select the date of joining!' }]}
                 >
-                  <DatePicker style={{ width: '100%' }} className="styled-input" />
+                  <DatePicker style={{ width: '100%' }} className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -155,7 +147,7 @@ export const JoinUsForm = () => {
                     { pattern: cnicRegex, message: 'Invalid CNIC format!' },
                   ]}
                 >
-                  <Input prefix={<IdcardOutlined />} placeholder="Enter CNIC (xxxxx-xxxxxxx-x)" className="styled-input" />
+                  <Input prefix={<IdcardOutlined />} placeholder="Enter CNIC (xxxxx-xxxxxxx-x)" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -166,7 +158,7 @@ export const JoinUsForm = () => {
                     { type: 'email', message: 'Please enter a valid email!' },
                   ]}
                 >
-                  <Input prefix={<MailOutlined />} placeholder="Enter your email" className="styled-input" />
+                  <Input prefix={<MailOutlined />} placeholder="Enter your email" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -174,7 +166,7 @@ export const JoinUsForm = () => {
                   label="Referral Name"
                   rules={[{ required: true, message: 'Please input the referral name!' }]}
                 >
-                  <Input placeholder="Enter the referral name" className="styled-input" />
+                  <Input placeholder="Enter the referral name" className="styled-input" disabled={isSubmitting} />
                 </Form.Item>
 
                 <Form.Item
@@ -182,7 +174,7 @@ export const JoinUsForm = () => {
                   label="Are you skilled in any of the below?"
                   rules={[{ required: true, message: 'Please select at least one skill!' }]}
                 >
-                  <Checkbox.Group>
+                  <Checkbox.Group disabled={isSubmitting}>
                     <Checkbox value="Graphic Designing">Graphic Designing</Checkbox>
                     <Checkbox value="Social Media">Social Media</Checkbox>
                     <Checkbox value="Motivational Speaker">Motivational Speaker</Checkbox>
@@ -195,8 +187,8 @@ export const JoinUsForm = () => {
                 </Form.Item>
 
                 <div className="btn-group">
-                  <Button onClick={previousStep} className="back-btn">Back</Button>
-                  <Button type="primary" htmlType="submit" className="submit-btn">Submit</Button>
+                  <Button onClick={previousStep} className="back-btn" disabled={isSubmitting}>Back</Button>
+                  <Button type="primary" htmlType="submit" className="submit-btn" disabled={isSubmitting}>Submit</Button>
                 </div>
               </>
             )}
@@ -206,5 +198,3 @@ export const JoinUsForm = () => {
     </div>
   );
 };
-
-

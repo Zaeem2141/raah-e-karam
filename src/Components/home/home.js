@@ -1,4 +1,5 @@
 import Slider from "../homeImageSlider/homeImageSlider"
+import JoinUsCard from "../joinUsCard/joinUsCard"
 import OurMission from "../mission/mission"
 import { usePageTitle } from "../pageTitle/pageTitle"
 import { Statistics } from "../stats/stats"
@@ -10,6 +11,7 @@ export const Home = () =>{
         <Slider/>
         <OurMission/>
         <Statistics/>
+        <JoinUsCard/>
         </>
     )
 }
