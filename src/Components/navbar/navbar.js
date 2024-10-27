@@ -29,7 +29,7 @@ const menuItems = [
   {
     label: "Refer A family",
     key: "refer",
-    path: "referAFamily"
+    path: "/referAFamily"
   }
 ];
 

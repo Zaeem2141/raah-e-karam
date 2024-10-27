@@ -1,10 +1,13 @@
 import { Button, Form, Input, Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import "./refer.css"
+import { usePageTitle } from "../pageTitle/pageTitle";
 
 const { Option } = Select;
 
 export const Refer = () => {
+
+    usePageTitle("Refer Needy - Raah e Karam");
   const [form] = Form.useForm();
 
   const handleSubmit = (values) => {

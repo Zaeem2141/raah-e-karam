@@ -74,9 +74,9 @@ const CustomFooter = () => {
             <Text>
               <Link
                 style={{ color: "#f3c647", fontSize: "1.05em" }}
-                to="/about#domainsSection"
+                to="/referAFamily"
               >
-                Our Domains
+                Refer a Needy
               </Link>
             </Text>
             <Text>
@@ -94,7 +94,7 @@ const CustomFooter = () => {
             </Text>
             <Text>
               <a
-                href="/contact"
+                href="/contactUs"
                 style={{ color: "#f3c647", fontSize: "1.05em" }}
               >
                 Contact Us
@@ -158,7 +158,7 @@ const CustomFooter = () => {
             >
               <FacebookOutlined style={{ fontSize: "1.8em" }} />
             </a>
-            <a
+            {/*<a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -181,7 +181,7 @@ const CustomFooter = () => {
               style={{ color: "#FF0000" }}
             >
               <YoutubeOutlined style={{ fontSize: "1.8em" }} />
-            </a>
+            </a>*/}
           </Space>
         </Col>
       </Row>

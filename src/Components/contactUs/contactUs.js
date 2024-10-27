@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Row, Col, Input, Button, Form } from 'antd';
 import { FacebookFilled, MailFilled, WhatsAppOutlined } from '@ant-design/icons';
 import './contactUs.css';
+import { usePageTitle } from '../pageTitle/pageTitle';
 
 const { TextArea } = Input;
 
@@ -29,6 +30,8 @@ const contactDetails = [
 ];
 
 const ContactUs = () => {
+    usePageTitle("Contact - Raah e Karam");
+
     const [form] = Form.useForm();
 
     // Function to handle form submission
