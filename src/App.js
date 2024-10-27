@@ -5,6 +5,8 @@ import { RouterProvider , createBrowserRouter } from 'react-router-dom';
 import { AboutUs } from './Components/aboutUS/aboutUs';
 import { Home } from './Components/home/home';
 import { JoinUsForm } from './Components/membership/membership';
+import ContactUs from './Components/contactUs/contactUs';
+import { Refer } from './Components/refer/refer';
 
 const App = () => {
 
@@ -24,6 +26,14 @@ const App = () => {
         {
           path: "/joinUs",
           element : <JoinUsForm/>
+        },
+        {
+          path: "/contactUs",
+          element: <ContactUs/>
+        },
+        {
+          path: "/referAFamily",
+          element : <Refer/>
         }
       ]
     },

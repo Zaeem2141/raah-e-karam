@@ -1,17 +1,19 @@
-import Slider from "../homeImageSlider/homeImageSlider"
-import JoinUsCard from "../joinUsCard/joinUsCard"
-import OurMission from "../mission/mission"
-import { usePageTitle } from "../pageTitle/pageTitle"
-import { Statistics } from "../stats/stats"
+import DomainsSection from "../domains/domains";
+import Slider from "../homeImageSlider/homeImageSlider";
+import OurMission from "../mission/mission";
+import { usePageTitle } from "../pageTitle/pageTitle";
+import RationListCard from "../rashanListCard/rashanListCard";
+import { Statistics } from "../stats/stats";
 
-export const Home = () =>{
-    usePageTitle("Raah e Karam")
-    return(
-        <>
-        <Slider/>
-        <OurMission/>
-        <Statistics/>
-        <JoinUsCard/>
-        </>
-    )
-}
+export const Home = () => {
+  usePageTitle("Raah e Karam");
+  return (
+    <>
+      <Slider />
+      <OurMission />
+      <Statistics />
+      <DomainsSection isScrollable={true} isBlack={true} />
+      <RationListCard/>
+    </>
+  );
+};

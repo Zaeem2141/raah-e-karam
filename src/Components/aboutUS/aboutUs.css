@@ -52,43 +52,42 @@
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   }
-  
-  .domains-section {
-    margin-top: 50px;
-  }
-  
-  .domains-section h2 {
-    text-align: center;
-    font-size: 5rem;
-    color: #f3c647;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
-  }
-  
-  .custom-card {
-    text-align: center;
-    border-left: 5px solid #f3c647;
-    border-bottom: 5px solid #f3c647;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    padding: 20px;
-  }
-  
-  .custom-card:hover {
-    transform: scale(1.05);
-  }
 
-  .custom-card strong {
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+  .foundation-info { /* White background */
+    padding: 20px; /* Adequate padding */
+    border-radius: 12px; /* Rounded corners */
+    border: 1px solid #f3c647; /* Light border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Center align text */
+    max-width: 400px; /* Set maximum width */
+    margin: 20px auto; /* Center horizontally with auto margins */
+    font-family: 'Arial', sans-serif; /* Modern font */
   }
   
-  .custom-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  .foundation-info strong {
+    color: white; /* Dark color for the headings */
+    display: block; /* Each item on a new line */
+    margin-bottom: 5px; /* Space below each heading */
+    margin-top: 10px;
   }
+  
+  .foundation-date,
+  .foundation-area {
+    color: #f3c647; /* Stylish blue for the details */
+    font-weight: bold; /* Bold for emphasis */
+    font-size: 1.5em; /* Slightly larger font size */
+    margin-bottom: 8px; /* Space below each detail */
+  }
+  
+  @media (max-width: 480px) {
+    .foundation-info {
+      padding: 15px; /* Adjust padding for smaller screens */
+      max-width: 90%; /* Make it responsive */
+    }
+  }
+  
+  
+  
   
   /* Media Queries for Mobile */
   @media (max-width: 768px) {
@@ -111,14 +110,6 @@
   
     .text-card p {
       font-size: 1rem;
-    }
-  
-    .domains-section h2 {
-      font-size: 2.5rem;
-    }
-  
-    .custom-card {
-      margin-bottom: 20px;
     }
   }
   

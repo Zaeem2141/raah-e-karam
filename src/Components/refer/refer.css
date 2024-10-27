@@ -1,0 +1,170 @@
+
+.refer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0 0;
+    background-image: url('../../images/slider1.jpg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background fixed when scrolling */
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+
+.refer-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: -1; /* Places overlay behind content */
+}
+
+.refer-container h1 {
+    text-align: center;
+    font-size: 5rem;
+    color: #f3c647;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.refer-container h3 {
+    font-size: 1.2rem;
+    color: #aaa8a8;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.refer-form {
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px); /* Enhanced blur effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.refer-form h2 {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Base style for input fields */
+.i-field {
+    background-color: transparent !important; /* Keeps background transparent */
+    color: white !important; /* Ensures text color is white */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+/* Style for focused and hovered states */
+.i-field:focus,
+.i-field:hover {
+    background-color: transparent !important; /* Prevents background change on hover or focus */
+    border-color: #f3c647 !important; /* Optional: Adds a color to the border on focus */
+}
+
+/* Override error styles */
+.ant-form-item-has-error .i-field {
+    background-color: transparent !important; /* Keeps background transparent on error */
+    border-color: rgba(255, 0, 0, 0.6) !important; /* Optional: Adds a red border on error */
+}
+
+/* Placeholder color */
+.i-field::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Sets placeholder color to a lighter white */
+}
+
+.ant-form-item-label > label {
+    color: white !important; /* Set the color you want, e.g., white */
+    font-weight: bold; /* Optional: make the label bold */
+}
+
+/* Button styling */
+.s-button {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.s-button:hover {
+    background:linear-gradient(to bottom, #FFD700, #FFC300, #FFAB00);
+}
+
+.i-field input {
+    background-color: transparent !important; /* Keeps background transparent */
+    color: white !important; /* Ensures text color is white */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Adds a semi-transparent border */
+  }
+
+  .i-field .ant-select-selection-placeholder,
+.i-field .ant-input-affix-wrapper-focused,
+.i-field .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  background-color: transparent !important; /* Prevents background color change */
+}
+
+/* Make the Select input transparent */
+.d-field .ant-select-selector {
+    background-color: transparent !important;
+    color: white !important; /* Ensures the text color is white */
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  }
+  
+  /* Change placeholder color */
+  .d-field .ant-select-selection-placeholder {
+    color: rgba(255, 255, 255, 0.6) !important; /* Makes the placeholder visible with a light white */
+  }
+  
+  /* Style the dropdown menu background and text color */
+  .d-field .ant-select-dropdown {
+    background-color: rgba(0, 0, 0, 0.7) !important; /* Dark transparent background */
+    color: white !important; /* Ensures text color in dropdown is white */
+  }
+  
+  /* Style each option in the dropdown */
+  .d-field .ant-select-item-option {
+    color: white !important; /* Option text color */
+  }
+  
+  /* Change background color on option hover and selection */
+  .d-field .ant-select-item-option-active {
+    background-color: rgba(255, 255, 255, 0.2) !important; /* Lighter background on hover */
+  }
+  
+  .d-field .ant-select-item-option-selected {
+    background-color: rgba(255, 255, 255, 0.3) !important; /* Different background when selected */
+  }
+  
+  
+@media (max-width: 768px) {
+
+
+    .refer-container {
+        padding: 100px 50px;
+    }
+
+    .refer-container h1 {
+        font-size: 2.5rem;
+    }
+    .refer-form {
+        padding: 15px;
+    }
+  }
+

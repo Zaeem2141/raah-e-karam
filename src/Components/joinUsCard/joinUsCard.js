@@ -7,7 +7,7 @@ const JoinUsCard = () => {
     window.open(
       'https://docs.google.com/forms/d/e/1FAIpQLSfTC1VsJcbU3jUVv-nSrMf_tR_L-H09ikLxBVPck0LSl7ukzA/viewform',
       '_blank'
-    ); // Replace with your form link
+    );
   };
 
   return (

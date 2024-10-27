@@ -1,0 +1,106 @@
+.domains-section {
+  margin: 50px 0;
+}
+
+.CustomHeading {
+  text-align: center;
+  font-size: 5rem;
+  color: #f3c647;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 5px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.custom-card strong{
+  font-size: 2rem;
+}
+
+.BlackHeading {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #000000;
+  font-size: 50px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5)
+}
+
+.custom-card {
+  width: 300px;
+  text-align: center;
+  border-left: 5px solid #f3c647;
+  border-bottom: 5px solid #f3c647;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, z-index 0.3s ease;
+  margin: 20px 10px;
+  padding: 20px;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 20px;
+  gap: 30px;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 50px;
+}
+
+.scroll-container .custom-card {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  transition: transform 0.4s, z-index 0.4s;
+  transform-origin: center;
+}
+
+.scroll-container .custom-card:hover,
+.scroll-container .custom-card:focus,
+.grid-container .custom-card:hover,
+.grid-container .custom-card:focus{ 
+  transform: scale(1.1) translateY(-10px); /* Scale up and lift */
+  z-index: 10; /* Ensure the hovered card is on top */
+  opacity: 1; /* Fully opaque when focused */
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #f3c647;
+  border-radius: 4px; color: #f3c647;
+  font-family: serif;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 2em;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .CustomHeading{
+    font-size: 2.5rem;
+  }
+
+  .BlackHeading{
+    font-size: 2.5rem;
+  }
+
+  .custom-card {
+    margin-bottom: 20px;
+  }
+
+  .custom-card strong{
+     font-size: 2rem;
+  }
+}

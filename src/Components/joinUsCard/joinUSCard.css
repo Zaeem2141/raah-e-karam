@@ -8,13 +8,13 @@
   }
   
   .join-us-card {
-    width: 70%; /* Larger for better presentation */
+    width: 90%; /* Larger for better presentation */
     background: linear-gradient(135deg, #f0b90a, #8b572a);
     border-radius: 20px;
-    padding: 40px;
+    padding: 50px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Default shadow */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Default shadow */
     border: 5px solid rgba(255, 204, 0, 0.5); /* Styled border */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
   }
@@ -49,24 +49,26 @@
     background-color: #f0b90a; /* A more pronounced golden button */
     border: none;
     color: white;
-    font-size: 1.2em;
-    padding: 12px 24px;
+    font-size: 1.5em;
+    padding: 10px 20px;
     border-radius: 30px;
+    font-weight: bold;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 10;
     position: relative;
   }
   
   .join-us-button:hover {
-    background-color: #d48806 !important; /* A richer golden-brown on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #f0b90a !important;
+    background-color: white !important; /* A richer golden-brown on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   }
   
   .join-us-image img {
     position: absolute;
     bottom: -20px;
     right: 10px;
-    width: 250px; /* Larger and more prominent image */
+    width: 300px; /* Larger and more prominent image */
     height: auto;
     opacity: 0.9;
     z-index: 0;
@@ -75,9 +77,11 @@
   @media (max-width: 768px) {
     .join-us-card {
       max-width: 100%;
+      width: 90%;
     }
   
     .join-us-content h2 {
+      text-align: center;
       font-size: 2.5em;
     }
   
@@ -91,7 +95,7 @@
     }
   
     .join-us-image img {
-      width: 100px;
+      width: 125px;
     }
   }
   

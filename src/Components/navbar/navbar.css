@@ -20,7 +20,8 @@
   
   /* Menu styles */
   .header .ant-menu {
-    background-color: #000000; /* Set menu background to black */
+    background-color: #000000; 
+    margin-right:10px;/* Set menu background to black */
  /* Remove any potential borders */
   }
 

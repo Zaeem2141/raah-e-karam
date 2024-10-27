@@ -22,9 +22,14 @@ const menuItems = [
     path: "/joinUs"
   },
   {
-    label: "Contact Me",
+    label: "Contact Us",
     key: "contact",
-    path: "/contact"
+    path: "/contactUs"
+  },
+  {
+    label: "Refer A family",
+    key: "refer",
+    path: "referAFamily"
   }
 ];
 

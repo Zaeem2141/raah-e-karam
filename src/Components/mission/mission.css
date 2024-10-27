@@ -41,7 +41,7 @@
   }
   
   /* Card styles remain unchanged */
-  .custom-card {
+  .custom-card-home {
     background-color: #f9f4dc; /* Light golden background */
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,7 @@
     transition: box-shadow 0.3s ease;
   }
   
-  .custom-card:hover {
+  .custom-card-home:hover {
     box-shadow: 0px 8px 15px rgba(163, 126, 44, 0.5); /* Golden shadow on hover */
   }
   
@@ -69,5 +69,25 @@
     font-size: 18px;
     color: #333;
     line-height: 1.6;
+  }
+
+
+  .join-us-button {
+    background-color: linear-gradient(135deg, #f3c647, #ff8c00); /* A more pronounced golden button */
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bolder;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .join-us-button:hover {
+    color: white !important;
+    background-color: #d48806 !important; /* A richer golden-brown on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   

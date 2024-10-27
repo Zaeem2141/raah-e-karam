@@ -16,7 +16,7 @@
   .slider-container {
     position: relative;
     width: 100%;
-    height: 90vh; /* Responsive height */
+    height: 100vh; /* Responsive height */
     max-height: 100vh;
     overflow: hidden;
   }
