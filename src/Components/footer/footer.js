@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../images/logo2.png";
 import { Layout, Row, Col, Typography, Space, Divider } from "antd";
 import {
@@ -11,11 +11,19 @@ import {
   MailOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import DonateModal from "../donateModal/donateModal";
 
 const { Footer } = Layout;
 const { Text, Title } = Typography;
 
 const CustomFooter = () => {
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => setIsModalVisible(true);
+  const hideModal = () => setIsModalVisible(false);
+
+
   const handleEmailClick = (event) => {
     event.preventDefault();
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -87,10 +95,8 @@ const CustomFooter = () => {
                 Join Us
               </a>
             </Text>
-            <Text>
-              <a href="/" style={{ color: "#f3c647", fontSize: "1.05em" }}>
-                Donate
-              </a>
+            <Text onClick={showModal} style={{ color: "#f3c647", fontSize: "1.05em", cursor:"pointer"}}>
+                {"Donate"}
             </Text>
             <Text>
               <a
@@ -196,6 +202,8 @@ const CustomFooter = () => {
           </Text>
         </Col>
       </Row>
+
+      <DonateModal isModalVisible={isModalVisible} handleCancel={hideModal}/>
     </Footer>
   );
 };

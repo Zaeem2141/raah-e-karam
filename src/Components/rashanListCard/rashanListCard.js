@@ -52,6 +52,10 @@ const RationListCard = () => {
             <span>1/2 kg</span>
           </Col>
           <Col span={12} className="item">
+            <span>• White Chanay</span>
+            <span>1/2 kg</span>
+          </Col>
+          <Col span={12} className="item">
             <span>• Tea</span>
             <span>Box</span>
           </Col>

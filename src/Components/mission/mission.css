@@ -4,18 +4,24 @@
   }
   
   .page-heading {
-    font-size: 48px;
-    color: #000;
-    font-weight: bold;
-    position: relative;
-    margin-bottom: 40px;
-    display: inline-block;
-    z-index: 1;
-    max-width: 90%; /* Limit the width to 90% of the viewport */
+    text-align: center;
+    font-size: 5rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .page-heading-about {
+    text-align: center;
+  font-size: 5rem;
+  color: #f3c647;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .page-heading::before {
-    content: "OUR MISSION"; /* Text behind the main heading */
     position: absolute;
     top: 50%; /* Center vertically with the main heading */
     left: 50%; /* Center horizontally */
@@ -26,19 +32,9 @@
     white-space: nowrap; /* Ensure the background text stays in a single line */
     font-weight: bold;
     
-    /* Add the zoom animation */
-    animation: zoomInOut 3s ease-in-out infinite; /* Animation with a 3-second duration */
   }
   
-  /* Keyframes for zoom-in and zoom-out motion */
-  @keyframes zoomInOut {
-    0%, 100% {
-      transform: translate(-50%, -50%) scale(1.4); /* Start and end scaled */
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(1); /* Zoom in to normal size */
-    }
-  }
+
   
   /* Card styles remain unchanged */
   .custom-card-home {
@@ -91,3 +87,10 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
   
+
+  @media (max-width: 768px) {
+    .page-heading,
+    .page-heading-about{
+      font-size: 2.5rem;
+    }
+  }

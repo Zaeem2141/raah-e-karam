@@ -4,9 +4,15 @@ import img1 from "../../images/slider0.jpg"
 import img2 from "../../images/slider1.jpg"
 import img3 from "../../images/slider2.jpg"
 import img4 from "../../images/slider4.jpg"
+import DonateModal from "../donateModal/donateModal";
 
-const images = [img1,img2,img3,img4];const Slider = () => {
+const images = [img1,img2,img3,img4];
+
+const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = () => setIsModalVisible(true);
+  const hideModal = () => setIsModalVisible(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,6 +29,7 @@ const images = [img1,img2,img3,img4];const Slider = () => {
   };
 
   return (
+    <>
     <div className="slider-container">
       <div className="slider-image"
         style={{
@@ -36,7 +43,7 @@ const images = [img1,img2,img3,img4];const Slider = () => {
             Holds the Hands, <br/><b><span className="highlight">To Help the Poor</span></b>
           </h1>
           <p>Your donation will Help someone <br/> to have a respectful Life.</p>
-          <button className="donate-btn">Donate Now</button>
+          <button className="donate-btn" onClick={showModal}>Donate Now</button>
         </div>
       </div>
 
@@ -51,6 +58,8 @@ const images = [img1,img2,img3,img4];const Slider = () => {
         ))}
       </div>
     </div>
+    <DonateModal isModalVisible={isModalVisible} handleCancel={hideModal}/>
+    </>
   );
 };
 
