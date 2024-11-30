@@ -13,8 +13,25 @@ export const Refer = () => {
   const handleSubmit = (values) => {
     const { name, phone, address, domain, reason } = values;
     const ourWhatsAppNumber = "923071632603";
-    const message = `Name of Family: ${name}\n Phone of Family: ${phone}\n Address of Family: ${address}
-        Required Domain: ${domain} \n Views of the Suggestor: ${reason}\n\n source: website`;
+    const message = `
+    🔔 *You have a new Case Referred from the RAAH e KARAM website!*
+    
+    👨‍👩‍👧‍👦 **Family Details:**
+
+    - *Name of Family:* ${name}
+    - *Phone of Family:* ${phone}
+    - *Address of Family:* ${address}
+    
+    🌟 *Requested Assistance:*
+
+    - *Required Domain:* ${domain}
+    
+    📝 *Suggestor's Views:*
+    ${reason}
+    
+    📌 *Source:* Website
+    `;
+    
 
     // Construct the WhatsApp URL with pre-filled message
     const whatsappURL = `https://wa.me/${ourWhatsAppNumber}?text=${encodeURIComponent(

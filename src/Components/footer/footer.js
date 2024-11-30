@@ -9,6 +9,9 @@ import {
   WhatsAppOutlined,
   PhoneOutlined,
   MailOutlined,
+  LineOutlined,
+  LinkedinOutlined,
+  TikTokOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import DonateModal from "../donateModal/donateModal";
@@ -122,11 +125,11 @@ const CustomFooter = () => {
               marginBottom: "10px",
             }}
           >
-            <MailOutlined />
+            <MailOutlined style={{color:"red"}}/>
             <a
               href="#"
               onClick={handleEmailClick}
-              style={{ color: "#f3c647", marginLeft: "8px", cursor: "pointer" }}
+              style={{ color: "red", marginLeft: "8px", cursor: "pointer" }}
             >
               raahekaram@gmail.com
             </a>
@@ -139,10 +142,10 @@ const CustomFooter = () => {
               marginBottom: "10px",
             }}
           >
-            <PhoneOutlined />
+            <PhoneOutlined style={{color:"green"}}/>
             <a
               href="tel:+923071632603"
-              style={{ color: "#FFD700", marginLeft: "8px" }}
+              style={{ color: "green", marginLeft: "8px" }}
             >
               +92 307 1632603
             </a>
@@ -164,30 +167,33 @@ const CustomFooter = () => {
             >
               <FacebookOutlined style={{ fontSize: "1.8em" }} />
             </a>
-            {/*<a
-              href="https://instagram.com"
+            <a
+              href="https://www.instagram.com/raah_e_karam?igsh=MTA3dnVpNzIyZHMzeA=="
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#E1306C" }}
+              style={{ color: "#E4405F" }}
+
             >
               <InstagramOutlined style={{ fontSize: "1.8em" }} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://www.linkedin.com/in/raah-e-karam-welfare-organization-0a2938336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#1DA1F2" }}
+              style={{ color: "#0a66c2" }}
+
             >
-              <TwitterOutlined style={{ fontSize: "1.8em" }} />
+              <LinkedinOutlined style={{ fontSize: "1.8em" }} />
             </a>
             <a
-              href="https://youtube.com"
+              href="https://www.tiktok.com/@raah.e.karam?_r=1&_d=eh92hg9342dmie&sec_uid=MS4wLjABAAAAJ9tqfE4Vrjn4RTaj_xld-EpYeiA3Ka6_514sETP-X-IWwvEDkdXgelr324_gzedS&share_author_id=7388252094958863366&sharer_language=en&source=h5_m&u_code=ef33mgli98dlcj&timestamp=1733002983&user_id=7388252094958863366&sec_user_id=MS4wLjABAAAAJ9tqfE4Vrjn4RTaj_xld-EpYeiA3Ka6_514sETP-X-IWwvEDkdXgelr324_gzedS&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7443023479878403847&share_link_id=55e2c0a0-5e2e-4cb0-a3f1-85e1b9031ca2&share_app_id=1233&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb0229&social_share_type=5&enable_checksum=1"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: "#FF0000" }}
+              style={{ color: "#EE1D52" }} 
+
             >
-              <YoutubeOutlined style={{ fontSize: "1.8em" }} />
-            </a>*/}
+              <TikTokOutlined style={{ fontSize: "1.8em" }} />
+            </a>
           </Space>
         </Col>
       </Row>

@@ -1,7 +1,7 @@
 // ContactUs.js
 import React, { useState } from 'react';
 import { Row, Col, Input, Button, Form } from 'antd';
-import { FacebookFilled, MailFilled, WhatsAppOutlined } from '@ant-design/icons';
+import { FacebookFilled, MailFilled, WhatsAppOutlined, InstagramOutlined , LinkedinOutlined } from '@ant-design/icons';
 import './contactUs.css';
 import { usePageTitle } from '../pageTitle/pageTitle';
 
@@ -18,8 +18,20 @@ const contactDetails = [
     {
         name: 'Facebook',
         link: 'https://www.facebook.com/profile.php?id=61560861104801',
-        description: 'Raah e Karam',
+        description: 'Our Facebook',
         icon: <FacebookFilled style={{ fontSize: '36px', color: '#4267B2' }} />,
+    },
+    {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/raah_e_karam?igsh=MTA3dnVpNzIyZHMzeA==',
+        description: 'Our Instagram',
+        icon: <InstagramOutlined style={{ fontSize: '36px', color: '#E4405F' }} />,
+    },
+    {
+        name: 'Linkedin',
+        link: 'https://www.linkedin.com/in/raah-e-karam-welfare-organization-0a2938336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        description: 'Our Linkedin',
+        icon: <LinkedinOutlined style={{ fontSize: '36px', color: '#0a66c2' }} />,
     },
     {
         name: 'Email',
@@ -38,10 +50,13 @@ const ContactUs = () => {
     const handleWhatsAppSubmit = (values) => {
         const { name, phone, message } = values;
         const ourWhatsAppNumber = '923071632603'; // Your WhatsApp number
-        const text = `Hello, my name is ${name}.${<br/>}
-         My phone number is ${phone}.${<br/>}
-         Message: ${<br/>}
-         ${message}`;
+        const text = `
+        *Hey, you got a message from RAAH e KARAM website!*\n\n
+        *Name:* ${name}\n
+        *Phone Number:* ${phone}\n\n
+        *Message:*\n
+        ${message}
+        `;
 
         // Construct the WhatsApp URL with pre-filled message
         const whatsappURL = `https://wa.me/${ourWhatsAppNumber}?text=${encodeURIComponent(text)}`;
