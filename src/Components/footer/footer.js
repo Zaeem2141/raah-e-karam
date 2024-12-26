@@ -41,7 +41,7 @@ const CustomFooter = () => {
       );
     }
   };
-  const whatsappNumber = "+923071632603"; // WhatsApp number in international format without the "+" symbol
+  const whatsappNumber = "+923291144504"; 
 
   return (
     <Footer
@@ -144,10 +144,10 @@ const CustomFooter = () => {
           >
             <PhoneOutlined style={{color:"green"}}/>
             <a
-              href="tel:+923071632603"
+              href="tel:+923291144504"
               style={{ color: "green", marginLeft: "8px" }}
             >
-              +92 307 1632603
+              +92 329 11 44 504
             </a>
           </Text>
           <Space size="large" style={{ marginTop: "15px" }}>

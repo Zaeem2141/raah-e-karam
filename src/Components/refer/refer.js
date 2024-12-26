@@ -12,7 +12,7 @@ export const Refer = () => {
 
   const handleSubmit = (values) => {
     const { name, phone, address, domain, reason } = values;
-    const ourWhatsAppNumber = "923071632603";
+    const ourWhatsAppNumber = "923291144504";
     const message = `
     🔔 *You have a new Case Referred from the RAAH e KARAM website!*
     

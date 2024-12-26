@@ -1,9 +1,10 @@
 import React from "react";
-import { Modal, Card, Button, message, Typography } from "antd";
+import { Modal, Card, Button, message, Typography, Tooltip } from "antd";
 import { CopyOutlined } from "@ant-design/icons";
 import "./donateModal.css";
 import easyPaisaImage from "../../images/easyPaiaLogo.png";
 import nayaPayImage from "../../images/nayapayLogo.png";
+import hblLogo from "../../images/hblLogo.png"
 
 const DonateModal = ({ isModalVisible, handleCancel }) => {
   const paymentOptions = [
@@ -11,11 +12,19 @@ const DonateModal = ({ isModalVisible, handleCancel }) => {
       name: "EasyPaisa",
       imageSrc: easyPaisaImage,
       accountNumber: "03071632603",
+      tooltip: "Qaisra Parveen"
     },
     {
       name: "NayaPay",
       imageSrc: nayaPayImage,
       accountNumber: "03491174754",
+      tooltip: "Noman Nawaz"
+    },
+    {
+      name: "HBL Account",
+      imageSrc: hblLogo,
+      accountNumber: "25647000237399",
+      tooltip: "Zaeem Alam"
     },
   ];
 
@@ -52,6 +61,8 @@ const DonateModal = ({ isModalVisible, handleCancel }) => {
       </p>
       <div className="payment-options">
         {paymentOptions.map((option, index) => (
+
+          <Tooltip title={`Account Name : ${option?.tooltip}`}>
           <div key={index} className="payment-option">
             
               <img
@@ -64,15 +75,17 @@ const DonateModal = ({ isModalVisible, handleCancel }) => {
               <Typography.Text  className="option-name">{option.name}</Typography.Text >
               <Typography.Text className="account-number">
                 {option.accountNumber} &nbsp;
+                <Tooltip title={"Copy Account number"}>
                 <Button
                   type="text"
                   icon={<CopyOutlined />}
                   onClick={() => copyToClipboard(option.accountNumber)}
                   className="copy-icon"
-                />
+                /></Tooltip>
               </Typography.Text >
             </div>
           </div>
+          </Tooltip>
         ))}
       </div>
     </Modal>

@@ -12,7 +12,7 @@ const contactDetails = [
     {
         name: 'WhatsApp',
         link: 'https://wa.me/923071632603',
-        description: '+92 307 1632603',
+        description: '+92 329 11 44 504',
         icon: <WhatsAppOutlined style={{ fontSize: '36px', color: '#25D366' }} />,
     },
     {
@@ -46,10 +46,10 @@ const ContactUs = () => {
 
     const [form] = Form.useForm();
 
-    // Function to handle form submission
+
     const handleWhatsAppSubmit = (values) => {
         const { name, phone, message } = values;
-        const ourWhatsAppNumber = '923071632603'; // Your WhatsApp number
+        const ourWhatsAppNumber = '923291144504'; 
         const text = `
         *Hey, you got a message from RAAH e KARAM website!*\n\n
         *Name:* ${name}\n
@@ -58,10 +58,10 @@ const ContactUs = () => {
         ${message}
         `;
 
-        // Construct the WhatsApp URL with pre-filled message
+
         const whatsappURL = `https://wa.me/${ourWhatsAppNumber}?text=${encodeURIComponent(text)}`;
 
-        // Redirect to WhatsApp with the composed message
+
         window.open(whatsappURL, '_blank');
     };
 
