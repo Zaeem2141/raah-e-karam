@@ -20,12 +20,12 @@ const DonateModal = ({ isModalVisible, handleCancel }) => {
       accountNumber: "03491174754",
       tooltip: "Noman Nawaz"
     },
-    {
-      name: "HBL Account",
-      imageSrc: hblLogo,
-      accountNumber: "25647000237399",
-      tooltip: "Zaeem Alam"
-    },
+    // {
+    //   name: "HBL Account",
+    //   imageSrc: hblLogo,
+    //   accountNumber: "25647000237399",
+    //   tooltip: "Zaeem Alam"
+    // },
   ];
 
   const copyToClipboard = (text) => {

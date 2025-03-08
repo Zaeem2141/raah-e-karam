@@ -126,11 +126,45 @@
   border-radius: 2px;
 }
 
+.select-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #f0b90a, #8b572a); /* Attractive gradient */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Smooth shadow for depth */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.select-button:hover {
+  background: linear-gradient(135deg, #8b572a, #f0b90a); /* Reverse gradient on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.select-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Media Query for Mobile */
 @media (max-width: 768px) {
   .statistics-container {
       padding: 10px 10px;
+  }
+
+  .select-button {
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    font-size: 14px;
   }
 
   .statistics-card {
@@ -186,5 +220,13 @@
 
   .chart-container {
     height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .select-button {
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 6px;
   }
 }

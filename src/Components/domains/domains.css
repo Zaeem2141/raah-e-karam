@@ -42,7 +42,8 @@
   padding: 20px 20px;
   gap: 30px;
   scroll-snap-type: x mandatory;
-  scroll-padding: 50px;
+  scroll-padding: 20px;
+  justify-content: center;
 }
 
 .scroll-container .custom-card {
@@ -102,5 +103,9 @@
 
   .custom-card strong{
      font-size: 2rem;
+  }
+
+  .scroll-container {
+    justify-content: flex-start; 
   }
 }
